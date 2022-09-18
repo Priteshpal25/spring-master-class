@@ -15,16 +15,16 @@ import com.pritechcode.springbasics.springbasics.xmlContext.XmlPersonDAO;
 
 
 @Configuration
-@ComponentScan
 public class XmlContextApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringScopeApplication.class);
 	public static void main(String[] args) {
 
 		try(ClassPathXmlApplicationContext applicationContext =  new ClassPathXmlApplicationContext("applicationContext.xml")){
+            
+            LOGGER.info("Beans Loaded => {}", (Object) applicationContext.getBeanDefinitionNames());
 			XmlPersonDAO xmlPersonDAO = applicationContext.getBean(XmlPersonDAO.class);
 
-	
 			LOGGER.info("{}", xmlPersonDAO);
 			LOGGER.info("{}", xmlPersonDAO.getXmlJdbcConnection());
 	
