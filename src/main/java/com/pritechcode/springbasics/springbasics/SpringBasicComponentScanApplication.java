@@ -12,9 +12,9 @@ import com.pritechcode.springbasics.componentscan.ComponentDOA;
 @SpringBootApplication
 @ComponentScan("com.pritechcode.springbasics.componentscan")
 public class SpringBasicComponentScanApplication {
-    private static Logger LOGGER = LoggerFactory.getLogger(SpringScopeApplication.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(SpringBasicComponentScanApplication.class);
 	public static void main(String[] args) {
-		ApplicationContext applicationContext =  SpringApplication.run(SpringScopeApplication.class, args);
+		ApplicationContext applicationContext =  SpringApplication.run(SpringBasicComponentScanApplication.class, args);
 
         ComponentDOA componentDOA = applicationContext.getBean(ComponentDOA.class);
 
