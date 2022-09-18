@@ -1,16 +1,21 @@
 package com.pritechcode.springbasics.springbasics;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.pritechcode.springbasics.springbasics.basics.BinarySearchImpl;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringBasicsApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext =  SpringApplication.run(SpringBasicsApplication.class, args);
+		ApplicationContext applicationContext =  
+			new AnnotationConfigApplicationContext(SpringBasicsApplication.class);
+		// SpringApplication.run(SpringBasicsApplication.class, args);
 
 		BinarySearchImpl binarySearch = 
 				applicationContext.getBean(BinarySearchImpl.class);
